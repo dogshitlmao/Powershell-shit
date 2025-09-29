@@ -6,7 +6,7 @@ Write-Host
 
 Write-Host "Nhập đường dẫn của folder mods cần quét: " -NoNewline
 Write-Host "(press Enter để dùng đường dẫn mặc định )" -ForegroundColor DarkGray
-$mods = Read-Host "PATH"
+$mods = Read-Host "Đường dẫn"
 Write-Host
 
 if (-not $mods) {
@@ -33,7 +33,7 @@ if ($process) {
     } catch {}
 
     Write-Host "{ Thời gian bật Minecraft }" -ForegroundColor DarkCyan
-    Write-Host "$($process.Name) PID $($process.Id) started at $startTime and running for $($elapsedTime.Hours)h $($elapsedTime.Minutes)m $($elapsedTime.Seconds)s"
+    Write-Host "$($process.Name) PID $($process.Id) đã chạy lúc $startTime và đã chạy trong $($elapsedTime.Hours)h $($elapsedTime.Minutes)m $($elapsedTime.Seconds)s"
     Write-Host ""
 }
 
@@ -256,4 +256,5 @@ Write-Host "{ Cheat Mods }" -ForegroundColor DarkCyan
 		Write-Host " [$($mod.StringsFound)]" -ForegroundColor DarkMagenta
 	}
 	Write-Host
+
 }
